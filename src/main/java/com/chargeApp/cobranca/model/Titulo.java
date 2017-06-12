@@ -1,5 +1,6 @@
 package com.chargeApp.cobranca.model;
 
+<<<<<<< Updated upstream
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -75,4 +76,15 @@ public class Titulo {
     public int hashCode() {
         return codigo.hashCode();
     }
+=======
+import javax.persistence.Entity;
+import java.math.BigDecimal;
+
+@Entity
+public class Titulo {
+    private Long codigo;
+    private String descricao;
+    private BigDecimal valor;
+    private Stat
+>>>>>>> Stashed changes
 }
