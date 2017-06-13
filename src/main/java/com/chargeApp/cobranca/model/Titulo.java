@@ -24,7 +24,7 @@ public class Titulo {
     private BigDecimal valor;
 
     @Enumerated(EnumType.STRING)
-    private StatusTitulo titulo;
+    private StatusTitulo status;
 
     public Long getCodigo() {
         return codigo;
@@ -58,26 +58,37 @@ public class Titulo {
         this.valor = valor;
     }
 
-    public StatusTitulo getTitulo() {
-        return titulo;
+    public StatusTitulo getStatus() {
+        return status;
     }
 
-    public void setTitulo(StatusTitulo titulo) {
-        this.titulo = titulo;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Titulo titulo = (Titulo) o;
-
-        return codigo.equals(titulo.codigo);
+    public void setStatus(StatusTitulo status) {
+        this.status = status;
     }
 
     @Override
     public int hashCode() {
-        return codigo.hashCode();
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
+        return result;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Titulo other = (Titulo) obj;
+        if (codigo == null) {
+            if (other.codigo != null)
+                return false;
+        } else if (!codigo.equals(other.codigo))
+            return false;
+        return true;
+    }
+
 }

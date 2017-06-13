@@ -7,11 +7,12 @@ public enum StatusTitulo {
 
     private String descricao;
 
-    StatusTitulo(String descricao){
+    StatusTitulo(String descricao) {
         this.descricao = descricao;
     }
 
-    public String getDescricao(){
+    public String getDescricao() {
         return descricao;
     }
+
 }
