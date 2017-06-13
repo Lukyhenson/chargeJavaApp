@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
     <title>ChargeApp</title>
@@ -23,6 +25,10 @@
     </nav>
 
     <form class="form-horizontal" method="POST" action="/titulos">
+        <div class="alert alert-success" role="alert">
+            <span>Titulo salvo com sucesso!</span>
+        </div>
+
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h1 class="panel-title">Novo Titulo</h1>
