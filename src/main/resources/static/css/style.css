@@ -7,3 +7,13 @@
     margin-left: 10px;
     margin-right: 10px;
 }
+
+.p-titulo{
+    float: left;
+    padding: 2px;
+}
+
+.n-titulo-btn{
+    float: right;
+    padding:0px;
+}
