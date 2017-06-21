@@ -4,6 +4,7 @@ import com.chargeApp.cobranca.model.StatusTitulo;
 import com.chargeApp.cobranca.model.Titulo;
 import com.chargeApp.cobranca.repository.Titulos;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
@@ -39,10 +40,15 @@ public class TituloController {
         if(errors.hasErrors()){
             return CADASTRO_VIEW;
         }
+        try{
+            titulos.save(titulo);
+            attributes.addFlashAttribute("mensagem", "Título salvo com sucesso!");
+            return "redirect:/titulos/novo";
+        }catch(DataIntegrityViolationException e){
+            errors.rejectValue("dataVencimento", null, "Formato de data invalido!");
+            return CADASTRO_VIEW;
+        }
 
-        titulos.save(titulo);
-        attributes.addFlashAttribute("mensagem", "Título salvo com sucesso!");
-        return "redirect:/titulos/novo";
     }
 
 
