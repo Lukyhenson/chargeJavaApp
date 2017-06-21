@@ -61,6 +61,13 @@ public class TituloController {
         return mv;
     }
 
+    @RequestMapping(value="{codigo}", method = RequestMethod.DELETE)
+    public String excluir(@PathVariable Long codigo, RedirectAttributes attributes){
+        titulos.delete(codigo);
+        attributes.addFlashAttribute("mensagem", "Título excluido com sucesso!");
+        return "redirect:/titulos";
+    }
+
     @ModelAttribute("todosStatusTitulo")
     public List<StatusTitulo> todosStatusTitulo() {
         return Arrays.asList(StatusTitulo.values());
