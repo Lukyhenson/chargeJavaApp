@@ -3,6 +3,7 @@ package com.chargeApp.cobranca.controller;
 import com.chargeApp.cobranca.model.StatusTitulo;
 import com.chargeApp.cobranca.model.Titulo;
 import com.chargeApp.cobranca.repository.Titulos;
+import com.chargeApp.cobranca.repository.filter.TituloFilter;
 import com.chargeApp.cobranca.service.CadastroTituloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -22,9 +23,6 @@ import java.util.List;
 public class TituloController {
 
     private static final String CADASTRO_VIEW = "CadastroTitulo";
-
-    @Autowired
-    private Titulos titulos;
 
     @Autowired
     private CadastroTituloService cadastroTituloService;
@@ -54,8 +52,8 @@ public class TituloController {
 
 
     @RequestMapping
-    public ModelAndView pesquisar(){
-        List<Titulo> todosTitulos = titulos.findAll();
+    public ModelAndView pesquisar(@ModelAttribute("filtro") TituloFilter filtro){
+        List<Titulo> todosTitulos = cadastroTituloService.filtrar(filtro);
         ModelAndView mv = new ModelAndView("PesquisaTitulos");
         mv.addObject("titulos", todosTitulos);
         return mv;
