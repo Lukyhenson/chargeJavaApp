@@ -1,3 +1,7 @@
+body{
+    background: #f1f1f1;
+}
+
 .panel-default{
     margin-left: 10px;
     margin-right: 10px;
@@ -16,4 +20,18 @@
 .n-titulo-btn{
     float: right;
     padding:0px;
+}
+
+.logo{
+    height:40px;
+    position: absolute;
+    left: 50%;
+    margin-left: -20px !important;  /* 50% of your logo width */
+    display: block;
+}
+
+.navbar{
+    min-height: 70px;
+    border-bottom: 1px solid #e8e8e8;
+    background: white;
 }
