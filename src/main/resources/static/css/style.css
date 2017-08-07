@@ -1,3 +1,6 @@
+*{
+    font-family: 'Raleway', sans-serif;
+}
 body{
     background: #f1f1f1;
 }
@@ -5,6 +8,7 @@ body{
 .panel-default{
     margin-left: 10px;
     margin-right: 10px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 .alert{
@@ -12,22 +16,140 @@ body{
     margin-right: 10px;
 }
 
-.p-titulo{
-    float: left;
-    padding: 2px;
+.heading-style{
+    background-color: #ffffff !important;
+    border-bottom: transparent;
+    padding-top: 40px;
 }
+
+.top-style-box{
+}
+@media (max-width: 992px){
+    .account-left-style{
+        margin-bottom:10px;
+        text-align: center;
+    }
+}
+.account-title{
+    font-size: 17px;
+}
+.money{
+    font-size: 20px;
+    color:#03c136;
+}
+.icon-money{
+    color:#03c136;
+}
+
+.edit-btn{
+    border-radius: 100%;
+    padding: 3px 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 992px){
+    .p-titulo{
+        font-weight: bold;
+        font-size: 20px;
+        margin-top: 5px;
+        text-align: center;
+    }
+}
+
+.p-titulo{
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.group-style-search{
+
+}
+
+.search-input{
+    height: 45px;
+    border: none !important;
+    border-color: transparent !important;
+    border-radius: 0% !important;
+}
+.search-input:focus{
+    border:none;
+    border-color: none !important;
+    -webkit-box-shadow: transparent !important;
+    box-shadow: none !important;
+}
+.btn-search{
+    height: 45px;
+    border:2px solid #e50f4f;
+    border-radius: 0% !important;
+    background: #e50f4f !important;
+    color: #fff;
+}
+
+.search-form{
+    border-radius: 0% !important;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
 
 .n-titulo-btn{
     float: right;
-    padding:0px;
+    font-size: 15px;
 }
 
-.logo{
-    height:40px;
+@media (max-width: 992px){
+    .circle-button{
+        float: right;
+        background: #02adbc;
+        border-color: #02adbc;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        right:4%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 7px #555;
+        color: #fff;
+        font-size: 20px;
+        line-height: 50px;
+        text-align: center;
+        transition: 300ms ease;
+    }
+}
+
+.circle-button{
+    float: right;
+    background: #02adbc;
+    border-color: #02adbc;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right:15%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 7px #555;
+    color: #fff;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    transition: 300ms ease;
+}
+
+.row-style {
+    margin-top: 40px;
+}
+
+.table-style{
+    margin-top: 0px;
+}
+
+.logo {
     position: absolute;
     left: 50%;
-    margin-left: -20px !important;  /* 50% of your logo width */
+    margin-left: -30px !important;  /* 50% of your logo width */
     display: block;
+}
+
+.logo img{
+    height:40px;
 }
 
 .navbar{

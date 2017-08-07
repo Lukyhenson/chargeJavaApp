@@ -47,3 +47,16 @@ $(function(){
         });
    });
 });
+
+
+// debit
+
+$(function(){
+    var moneyNumber = $('.moneyNumber');
+    alert(moneyNumber.text());
+
+   $(function debit() {
+        moneyNumber.text('2.000,00');
+   });
+
+})

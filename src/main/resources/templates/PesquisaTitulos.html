@@ -9,40 +9,55 @@
 
 <section layout:fragment="conteudo">
     <div layout:include="MensagemGeral"></div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="panel panel-default panel-style">
+        <div class="panel-heading heading-style">
             <div class="clearfix">
-                <h1 class="panel-title p-titulo">Pesquisa de Titulo</h1>
-                <a href="/titulos/novo" class="btn btn-link n-titulo-btn">Novo titulo</a>
-            </div>
-        </div>
-        <div class="panel-body">
+                <div class="row top-style-box">
+                    <div class="col-md-2 account-left-style">
+                            <h4 class="account-title"><strong>Your Account:</strong></h4>
+                            <span class="money">
+                                <i class="ion-social-usd icon-money"></i> <strong class="moneyNumber">3.000,00</strong>
+                            </span>
+                            <span class="label label-primary edit-btn"><i class="ion-edit"></i></span>
+                    </div>
 
-            <form method="GET" class="form-horizontal" th:object="${filtro}">
-                <div class="form-group">
-                    <div class="col-sm-4">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Qual o titulo você esta procurando?"
-                                   autofocus="autofocus" th:field="*{descricao}"/>
-                            <span class="input-group-btn">
-                                <button type="submit" class="btn btn-default">
+                    <div class="col-md-9">
+                        <form method="GET" class="form-horizontal" th:object="${filtro}">
+                            <div class="form-group group-style-search">
+                                <div class="col-md-10">
+                                    <div class="input-group search-form">
+                                        <input type="text" class="form-control search-input" placeholder="Qual o titulo você esta procurando?"
+                                               autofocus="autofocus" th:field="*{descricao}"/>
+                                        <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default btn-search" >
                                     <i class="glyphicon glyphicon-search"></i>
                                 </button>
                             </span>
-                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-md-1">
+                        <a href="/titulos/novo" class="circle-button" ><i class="ion-plus-round"></i></a>
                     </div>
                 </div>
-            </form>
-
+            </div>
+        </div>
+        <div class="container row-style">
+            <hr/>
+        </div>
+        <div class="panel-body table-style">
             <table class="table table-bordered table-striped">
                 <thead>
                 <tr>
                     <th class="text-center col-md-1">#</th>
-                    <th>Descrição</th>
+                    <th>Description</th>
                     <th class="text-center col-md-2">Data de vencimento</th>
-                    <th class="text-right col-md-2">Valor</th>
+                    <th class="text-right col-md-2">Value</th>
                     <th class="text-center col-md-2">Status</th>
-                    <th class="col-md-1"></th>
+                    <th class="text-center col-md-1"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -56,15 +71,15 @@
                             th:classappend="${titulo.pendente ? 'label-danger' : 'label-success'}"></span>
                     </td>
                     <td class="text-center">
-                        <a class="btn btn-link btn-xs" th:href="@{/titulos/{codigo}(codigo=${titulo.codigo})}" title="Editar" rel="tooltip" data-placement="top">
+                        <a class="btn btn-primary btn-xs" th:href="@{/titulos/{codigo}(codigo=${titulo.codigo})}" title="Editar" rel="tooltip" data-placement="top">
                             <span class="glyphicon glyphicon-pencil"></span>
                         </a>
-                        <a class="btn btn-link btn-xs" data-toggle="modal" data-target="#confirmacaoExclusaoModal"
+                        <a class="btn btn-danger btn-xs" data-toggle="modal" data-target="#confirmacaoExclusaoModal"
                            th:attr="data-codigo=${titulo.codigo}, data-descricao=${titulo.descricao}"
                            title="Excluir" rel="tooltip" data-placement="top">
                             <span class="glyphicon glyphicon-remove"></span>
                         </a>
-                        <a class="btn btn-link btn-xs js-atualizar-status" th:if="${titulo.pendente}"
+                        <a class="btn btn-success btn-xs js-atualizar-status" th:if="${titulo.pendente}"
                            title="Receber" rel="tooltip" data-placement="top"
                            th:attr="data-codigo=${titulo.codigo}"
                            th:href="@{/titulos/{codigo}/receber(codigo=${titulo.codigo})}">
@@ -84,5 +99,8 @@
     </div>
 
 </section>
+
+<!--<script th:inline="javascript">-->
+<!--</script>-->
 
 </html>
