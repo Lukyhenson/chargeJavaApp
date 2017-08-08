@@ -14,7 +14,7 @@
             <div class="clearfix">
                 <div class="row top-style-box">
                     <div class="col-md-2 account-left-style">
-                            <h4 class="account-title"><strong>Your Account:</strong></h4>
+                            <h4 class="account-title"><strong>Your Balance:</strong></h4>
                             <span class="money">
                                 <i class="ion-social-usd icon-money"></i> <strong class="moneyNumber">3.000,00</strong>
                             </span>
@@ -26,7 +26,7 @@
                             <div class="form-group group-style-search">
                                 <div class="col-md-10">
                                     <div class="input-group search-form">
-                                        <input type="text" class="form-control search-input" placeholder="Qual o titulo você esta procurando?"
+                                        <input type="text" class="form-control search-input" placeholder="What do you searching?"
                                                autofocus="autofocus" th:field="*{descricao}"/>
                                         <span class="input-group-btn">
                                 <button type="submit" class="btn btn-default btn-search" >
@@ -54,8 +54,8 @@
                 <tr>
                     <th class="text-center col-md-1">#</th>
                     <th>Description</th>
-                    <th class="text-center col-md-2">Data de vencimento</th>
-                    <th class="text-right col-md-2">Value</th>
+                    <th class="text-center col-md-2">Exp. date</th>
+                    <th class="text-center col-md-2">Value</th>
                     <th class="text-center col-md-2">Status</th>
                     <th class="text-center col-md-1"></th>
                 </tr>
@@ -65,7 +65,7 @@
                     <td class="text-center" th:text="${titulo.codigo}"></td>
                     <td class="" th:text="${titulo.descricao}"></td>
                     <td class="text-center" th:text="${{titulo.dataVencimento}}"></td>
-                    <td class="text-right" th:text="|R$ ${titulo.valor}|"></td>
+                    <td class="text-center" th:text="|R$ ${titulo.valor}|"></td>
                     <td class="text-center" th:attr="data-role=${titulo.codigo}">
                         <span class="label" id="teste" th:text="${titulo.status.descricao}"
                             th:classappend="${titulo.pendente ? 'label-danger' : 'label-success'}"></span>
